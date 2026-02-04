@@ -24,8 +24,17 @@ public class Vehicle {
 		return startingValue + (condition * conditionValueMult);
 	}
 	
+	public double getScrapValue() {
+		return 0;
+	}
+	
 	public String toString() {
-		return null;
+		String output = "--- " + name + ", " + this.getClass().toString().substring(11) + " ---\n"
+					+	"Condition: " + condition + "\n"
+					+   "Miles (in thousands): " + miles + "\n"
+					+   "Value: " + getValue() + "\n"
+					+   "Scrap Value: " + getScrapValue();
+		return output;
 	}
 
 	public String getName() {

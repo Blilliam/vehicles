@@ -15,4 +15,13 @@ public class Helicopter extends Vehicle{
 		this.condition = condition;
 		this.miles = miles;
 	}
+	
+	public double getValue() {
+		return super.getValue() + (5_000 * maxPassengerWeight);
+	}
+	
+	public String toString() {
+		String output = super.toString();
+		return output += "\nMax Passenger Weight (in thousands): " + maxPassengerWeight;
+	}
 }
