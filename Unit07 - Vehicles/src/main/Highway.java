@@ -7,8 +7,8 @@ public class Highway {
 		Vehicle[] vs = new Vehicle[4]; 
 		
 		vs[0] = new Vehicle();
-		vs[1] = new Car("Lightning Mcqueen", 5, 5);
-		vs[2] = new Truck();
+		vs[1] = new Car("Lightning Mcqueen", 5, 0);
+		vs[2] = new Truck("Tow Mater", 5, 0);
 		vs[3] = new Helicopter();
 		
 		for (Vehicle v:vs) {

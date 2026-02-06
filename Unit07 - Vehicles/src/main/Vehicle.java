@@ -8,10 +8,13 @@ public class Vehicle {
 	int condition;
 	int miles;
 	
+	boolean isScrapped;
+	
 	public Vehicle() {
 		name = "Honda Accord";
 		condition = 5; // 0 is bad and 5 is good
 		miles = 0; // in thousands
+		isScrapped = false;
 	}
 
 	public Vehicle(String name, int condition, int miles) {
@@ -29,16 +32,30 @@ public class Vehicle {
 	}
 	
 	public String toString() {
-		String output = "--- " + name + ", " + this.getClass().toString().substring(11) + " ---\n"
+		double tempValue;
+		if (isScrapped) {
+			tempValue = getScrapValue();
+		} else {
+			tempValue = getValue();
+		}
+		
+		String output = "\n--- " + name + ", " + this.getClass().toString().substring(11) + " ---\n"
 					+	"Condition: " + condition + "\n"
 					+   "Miles (in thousands): " + miles + "\n"
-					+   "Value: " + getValue() + "\n"
-					+   "Scrap Value: " + getScrapValue();
+					+   "Value: " + tempValue;
 		return output;
 	}
 
 	public String getName() {
 		return name;
+	}
+	
+	public boolean getIsScrapped() {
+		return isScrapped;
+	}
+	
+	public void setIsScrapped(boolean b) {
+		isScrapped = b;
 	}
 
 	public void setName(String name) {

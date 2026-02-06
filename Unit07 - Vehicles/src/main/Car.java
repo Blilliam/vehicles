@@ -43,6 +43,11 @@ public class Car extends Vehicle {
 		return super.getValue() + (1_000 * condition);
 	}
 	
+	public double getScrapValue() {
+		double tempVal = 0.1 * (startingValue + (9_000 * 5)) - (500 * miles);
+		return Math.max(Math.min(tempVal, 20_000), 0);
+	}
+	
 	public void setCondition(int condition) {
 		super.setCondition(condition);
 		

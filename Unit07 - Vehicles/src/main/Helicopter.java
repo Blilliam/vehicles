@@ -9,6 +9,10 @@ public class Helicopter extends Vehicle{
 		miles = 0; // in thousands
 		maxPassengerWeight = 0;
 	}
+	
+	public Helicopter(Vehicle v) {
+		
+}
 
 	public Helicopter(String name, int condition, int miles, int maxPassengerWeight) {
 		this.name = name;
@@ -18,6 +22,10 @@ public class Helicopter extends Vehicle{
 	
 	public double getValue() {
 		return super.getValue() + (5_000 * maxPassengerWeight);
+	}
+	
+	public double getScrapValue() {
+		return 0.3 * (startingValue + 5_000 * maxPassengerWeight);
 	}
 	
 	public String toString() {
