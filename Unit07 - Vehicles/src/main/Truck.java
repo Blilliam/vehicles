@@ -14,12 +14,16 @@ public class Truck extends Car{
 		return super.getValue() * Math.pow(0.95, miles % 10);
 	}
 	
-	public boolean tow(Vehicle v) {
+	public void tow(Vehicle v) {
 		if (v.getClass().toString().substring(11) == "Truck") {
-			return false;
+			return;
 		}
 		v.setCondition(0);
-		
-		return true;
+	}
+	
+	public void towAll(Vehicle[] vs) {
+		for (int i = 0; i< vs.length; i++) {
+			tow(vs[i]);
+		}
 	}
 }

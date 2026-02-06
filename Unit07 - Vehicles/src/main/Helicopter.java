@@ -8,11 +8,7 @@ public class Helicopter extends Vehicle{
 		condition = 5; // 0 is bad and 5 is good
 		miles = 0; // in thousands
 		maxPassengerWeight = 0;
-	}
-	
-	public Helicopter(Vehicle v) {
-		
-}
+	}	
 
 	public Helicopter(String name, int condition, int miles, int maxPassengerWeight) {
 		this.name = name;
@@ -25,11 +21,16 @@ public class Helicopter extends Vehicle{
 	}
 	
 	public double getScrapValue() {
-		return 0.3 * (startingValue + 5_000 * maxPassengerWeight);
+		return 0.3 * (startingValue + (5_000 * maxPassengerWeight));
 	}
 	
 	public String toString() {
 		String output = super.toString();
 		return output += "\nMax Passenger Weight (in thousands): " + maxPassengerWeight;
+	}
+	
+	public static Helicopter rebuild(Vehicle v) {
+		Helicopter newHeli = new Helicopter(v.getName(), v.getCondition(), v.getMiles(), 100);
+		return newHeli;
 	}
 }

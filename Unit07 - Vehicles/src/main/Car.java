@@ -23,10 +23,16 @@ public class Car extends Vehicle {
 		activeCars++;
 		totalCars++;
 
-		if (getMiles() >= 200) {
-			activeCars--;
-			isActive = false;
-		}
+		setMiles(miles);
+	}
+	
+	public static Vehicle salvage(Car c) {
+		Vehicle newV = new Vehicle();
+		newV.setName(c.name + " -> Golf Cart");
+		newV.setMiles(c.getMiles());
+		newV.setCondition(c.getCondition());
+		
+		return newV;
 	}
 
 	public void setMiles(int miles) {

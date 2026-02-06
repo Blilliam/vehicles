@@ -68,6 +68,9 @@ public class Vehicle {
 
 	public void setCondition(int condition) {
 		this.condition = condition;
+		if (condition == 0) {
+			isScrapped = false;
+		}
 	}
 
 	public int getMiles() {
@@ -75,6 +78,9 @@ public class Vehicle {
 	}
 
 	public void setMiles(int miles) {
+		if (miles >= 200) {
+			setCondition(0);
+		}
 		this.miles = miles;
 	}
 	
